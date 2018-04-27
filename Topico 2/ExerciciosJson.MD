@@ -15,3 +15,20 @@ application/json
 }
 </pre>
 **Nil** não é um valor literal, portanto, é esperado que se esteja entre aspas
+ 
+ ### 4) Qual seria um possível arquivo JSON contendo dados correspondentes a uma instância de um objeto da classe Bicycle?
+<pre>
+{	"gear":3, 
+	"cadence": 6,
+	"speed": 18,
+} </pre>
+
+
+### 5) Qual seria a representação em JSON de um objeto contendo as seguintes propriedades
+<pre>
+{	"cidades":["Goiânia,"Trindade"], 
+	"salada": "alface",
+	"altura": [2,3],
+	"sabor": null,
+} </pre>
+
