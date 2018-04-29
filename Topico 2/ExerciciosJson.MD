@@ -32,3 +32,5 @@ application/json
 	"sabor": null,
 } </pre>
 
+### 6) 
+![img](https://i.imgur.com/2CgNsNi.png)
