@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<alunos>
+    <aluno>
+        <email>frank@g.com</email>
+        <nome>frank</nome>
+    </aluno>
+    <aluno>
+        <email> fiona@g.com</email>
+        <nome>fiona</nome>
+    </aluno>
+    <aluno>
+        <email> phillip@g.com</email>
+        <nome>phillip</nome>
+    </aluno>
+</alunos>
