@@ -1,0 +1,28 @@
+<calcados>
+
+    <sapato>
+        <marca>Kildare</marca>
+        <preco>150.00</preco>
+        <cor>64, 64, 64</cor>
+    </sapato>
+
+    <sapato>
+        <marca>Gentleman</marca>
+        <preco>500.00</preco>
+        <cor>0, 0, 77</cor>
+    </sapato>
+
+    <tenis>
+        <marca>nike</marca>
+        <preco>199.99</preco>
+        <esporte>Caminhada</esporte>
+    </tenis>
+
+    <tenis>
+        <marca>Mizuno</marca>
+        <preco>399.99</preco>
+        <esporte>Corrida</esporte>
+    </tenis>
+
+
+</calcados>

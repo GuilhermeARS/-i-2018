@@ -9,28 +9,32 @@ import java.util.ArrayList;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+
 /**
  * classe recebe o endereço de um arquivo CSV e o converte para XML
- * 
+ *
  */
 public class CSVparaXML {
 
     private Alunos alunos = new Alunos();
     private ArrayList<Aluno> arrayAluno = new ArrayList<Aluno>();
     private String file;
-/**
- * 
- * @param file endereço do arquivo CSV
- */
+
+    /**
+     *
+     * @param file endereço do arquivo CSV
+     */
     public CSVparaXML(String file) {
         this.file = file;
     }
 
     /**
-     * método lê o CSV, linha a linha, separa por vírgula e passa cada item do 
-     * CSV para um objeto na classe aluno, e finalmente coloca os mesmos na lista Alunos
+     * método lê o CSV, linha a linha, separa por vírgula e passa cada item do
+     * CSV para um objeto na classe aluno, e finalmente coloca os mesmos na
+     * lista Alunos
+     *
      * @throws FileNotFoundException
-     * @throws IOException 
+     * @throws IOException
      */
     public void leCSV() throws FileNotFoundException, IOException {
         BufferedReader br = new BufferedReader(new FileReader(file));
@@ -45,11 +49,13 @@ public class CSVparaXML {
         }
         alunos.setAlunos(arrayAluno);
     }
-/**
- * Método persiste, utilizando JAXB, o conteúdo da lista de alunos.
- * @throws JAXBException
- * @throws IOException 
- */
+
+    /**
+     * Método persiste, utilizando JAXB, o conteúdo da lista de alunos.
+     *
+     * @throws JAXBException
+     * @throws IOException
+     */
     public void escreveXML() throws JAXBException, IOException {
         leCSV();
         JAXBContext jaxbContext = JAXBContext.newInstance(Alunos.class);
