@@ -1,6 +1,4 @@
-
 package com.github.guilhermears.es.integracao.topico2.tarefaJson7;
-
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,40 +13,48 @@ import java.nio.file.Paths;
 import javax.net.ssl.HttpsURLConnection;
 
 /**
- * Esta classe possui metodos para instanciar uma conexão e baixar a imagem de perfil
- * 
+ * Esta classe possui metodos para instanciar uma conexão e baixar a imagem de
+ * perfil
+ *
  */
 public class DownloadPerfil {
-   private String linkPerfil;
+
+    private String linkPerfil;
+
     /**
-     * 
+     *
      * @param linkPerfil deve receber a url do perfil
      */
-    public DownloadPerfil(String linkPerfil){
+    public DownloadPerfil(String linkPerfil) {
         this.linkPerfil = linkPerfil;
     }
-/**
- * instancia a conexão
- * @return retorna um HttpsURLConnection
- * @throws MalformedURLException
- * @throws IOException 
- */
-    public HttpsURLConnection conectaUrl() throws MalformedURLException, IOException  {
 
-            URL link = new URL(linkPerfil);
-            HttpsURLConnection connection = (HttpsURLConnection) link.openConnection();
-            connection.setRequestMethod("GET");
-            connection.setReadTimeout(10000);
-            connection.connect();
+    /**
+     * instancia a conexão
+     *
+     * @return retorna um HttpsURLConnection
+     * @throws MalformedURLException
+     * @throws IOException
+     */
+    public HttpsURLConnection conectaUrl() throws MalformedURLException, IOException {
+
+        URL link = new URL(linkPerfil);
+        HttpsURLConnection connection = (HttpsURLConnection) link.openConnection();
+        connection.setRequestMethod("GET");
+        connection.setReadTimeout(10000);
+        connection.connect();
         return connection;
 
-        }
+    }
+
     /**
-     * Obtêm informações da url e grava em arquivo a imagem de perfil com o nome do perfil.
+     * Obtêm informações da url e grava em arquivo a imagem de perfil com o nome
+     * do perfil.
+     *
      * @return retorna um boolean se foi baixado com sucesso.
      */
     public boolean downloadAvatar() {
-            HttpsURLConnection connection;
+        HttpsURLConnection connection;
         try {
             connection = conectaUrl();
             BufferedReader buffer = new BufferedReader(new InputStreamReader(connection.getInputStream()));
@@ -67,10 +73,9 @@ public class DownloadPerfil {
             InputStream is = new URL(avatar).openStream();
             Files.copy(is, Paths.get(nome + ".jpg"));
             return true;
-        } catch (IOException ex) {   
+        } catch (IOException ex) {
             System.out.println(ex.getMessage());
             return false;
-    }
+        }
     }
 }
-

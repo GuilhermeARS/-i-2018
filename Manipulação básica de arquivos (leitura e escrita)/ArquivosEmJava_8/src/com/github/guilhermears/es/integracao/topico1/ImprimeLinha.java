@@ -25,7 +25,7 @@ public class ImprimeLinha {
      */
     public ImprimeLinha(String[] args, int linha) throws FileNotFoundException {
         this.args = args;
-        this.linha = linha-2;
+        this.linha = linha - 2;
         arq = new RandomAccessFile(args[0], "r");
     }
 
@@ -37,9 +37,9 @@ public class ImprimeLinha {
      */
     public String imprimir() throws UnsupportedEncodingException, IOException {
         int tamIndex = arq.readInt();
-        arq.skipBytes(linha*4);
+        arq.skipBytes(linha * 4);
         int index = arq.readInt();
-        arq.skipBytes(tamIndex*4-(linha*4));
+        arq.skipBytes(tamIndex * 4 - (linha * 4));
         arq.skipBytes(index);
         int tamanhoLinha = arq.readInt();
         return arq.readLine();

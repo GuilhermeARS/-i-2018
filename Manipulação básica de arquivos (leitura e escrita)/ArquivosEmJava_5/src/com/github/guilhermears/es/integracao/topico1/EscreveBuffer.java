@@ -17,22 +17,24 @@ public class EscreveBuffer {
     String[] args;
     FileOutputStream fis;
     DataOutputStream dis;
+
     /**
-     * Construtor recebe o argumento em String[] que recebeu um arquivo de texto.
+     * Construtor recebe o argumento em String[] que recebeu um arquivo de
+     * texto.
      *
      * @param args arquivo de entrada
      * @throws java.io.FileNotFoundException
      */
     public EscreveBuffer(String[] args) throws FileNotFoundException {
         this.args = args;
-    fis = new FileOutputStream(args[1]);
-    dis = new DataOutputStream(fis);
+        fis = new FileOutputStream(args[1]);
+        dis = new DataOutputStream(fis);
     }
 
     /**
      * Método lê, linha a linha o arquivo e coloca no buffer o tamanho da linha
-     * seguido da própria até o fim do arquivo. 
-     * 
+     * seguido da própria até o fim do arquivo.
+     *
      * @throws java.io.UnsupportedEncodingException
      */
     public void Preenche() throws UnsupportedEncodingException, IOException {
@@ -43,15 +45,15 @@ public class EscreveBuffer {
             buffer.write(tamanho);
             buffer.write(linha);
         }
-        
-
 
     }
-     /**
+
+    /**
      * escreve o buffer no arquivo
-     * @throws IOException 
+     *
+     * @throws IOException
      */
-    public void EscreveArq() throws IOException{
+    public void EscreveArq() throws IOException {
         dis.write(buffer.toByteArray());
     }
 }

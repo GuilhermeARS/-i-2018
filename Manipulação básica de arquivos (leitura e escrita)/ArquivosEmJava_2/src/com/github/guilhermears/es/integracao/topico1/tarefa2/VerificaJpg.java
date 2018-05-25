@@ -11,16 +11,19 @@ public class VerificaJpg {
     private String arquivo;
 
     /**
-     * 
-     * @param arquivo recebe o arquivo jpg 
+     *
+     * @param arquivo recebe o arquivo jpg
      */
     public VerificaJpg(String arquivo) {
         this.arquivo = arquivo;
     }
-/**
- * Método lê os dois primeiros e os dois ultimos bytes do JPEG, e retorna um teste se eles batem com ffd8ff2d9, que identifica um JPEG
- * @return retorna um boolean que diz se o arquivo é um JPEG ou não.
- */
+
+    /**
+     * Método lê os dois primeiros e os dois ultimos bytes do JPEG, e retorna um
+     * teste se eles batem com ffd8ff2d9, que identifica um JPEG
+     *
+     * @return retorna um boolean que diz se o arquivo é um JPEG ou não.
+     */
     public boolean verificacaoJpeg() throws FileNotFoundException, IOException {
 
         File arc = new File(arquivo);

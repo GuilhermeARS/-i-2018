@@ -1,4 +1,3 @@
-
 package com.github.guilhermears.es.integracao.topico2.tarefaJson7;
 
 /**
@@ -7,20 +6,16 @@ package com.github.guilhermears.es.integracao.topico2.tarefaJson7;
  *
  */
 public class Exercicio7 {
- 
-	
-	public static void main(String[] args)  {
-            DownloadPerfil baixar = new DownloadPerfil(args[0]);
-            boolean status = baixar.downloadAvatar();
-            if (status){
-                System.out.println("A imagem de perfil foi baixada com sucesso.");
-            }else{
-                System.out.println("A imagem de perfil não foi baixada.");
-            }
-	
 
-	}
+    public static void main(String[] args) {
+        DownloadPerfil baixar = new DownloadPerfil(args[0]);
+        boolean status = baixar.downloadAvatar();
+        if (status) {
+            System.out.println("A imagem de perfil foi baixada com sucesso.");
+        } else {
+            System.out.println("A imagem de perfil não foi baixada.");
+        }
 
-	
+    }
 
 }

@@ -20,35 +20,36 @@ public class EscreveBuffer {
     String[] args;
     FileOutputStream fis;
     DataOutputStream dis;
-    
+
     /**
-     * Construtor recebe o argumento em String[] que recebeu um arquivo de texto.
+     * Construtor recebe o argumento em String[] que recebeu um arquivo de
+     * texto.
      *
      * @param args arquivo de entrada
      * @throws java.io.FileNotFoundException
      */
     public EscreveBuffer(String[] args) throws FileNotFoundException {
         this.args = args;
-    fis = new FileOutputStream(args[1]);
-    dis = new DataOutputStream(fis);
+        fis = new FileOutputStream(args[1]);
+        dis = new DataOutputStream(fis);
     }
 
     /**
-     * Método lê, linha a linha o arquivo e coloca no buffer o indice
-     * seguido da própria até o fim do arquivo. 
-     * 
+     * Método lê, linha a linha o arquivo e coloca no buffer o indice seguido da
+     * própria até o fim do arquivo.
+     *
      * @throws java.io.UnsupportedEncodingException
      */
     public void Preenche() throws UnsupportedEncodingException, IOException {
         arq = new Scanner(new FileReader(args[0]));
-        int index=0;
-        int tamIndex=0;
+        int index = 0;
+        int tamIndex = 0;
         while (arq.hasNextLine()) {
             String line = arq.nextLine();
-            line = System.getProperty("line.separator")+line;
+            line = System.getProperty("line.separator") + line;
             byte[] linha = line.getBytes("UTF-8");
-            
-            index = index + linha.length+4;
+
+            index = index + linha.length + 4;
             byte[] indice = ByteBuffer.allocate(4).putInt(index).array();
             byte[] tamanho = ByteBuffer.allocate(4).putInt(linha.length).array();
             buffer.write(indice);
@@ -56,15 +57,16 @@ public class EscreveBuffer {
             buffer2.write(linha);
             tamIndex++;
         }
-       tamIndice = ByteBuffer.allocate(4).putInt(tamIndex).array();
-        
-        
+        tamIndice = ByteBuffer.allocate(4).putInt(tamIndex).array();
+
     }
+
     /**
      * escreve o buffer no arquivo
-     * @throws IOException 
+     *
+     * @throws IOException
      */
-    public void EscreveArq() throws IOException{
+    public void EscreveArq() throws IOException {
         dis.write(tamIndice);
         dis.write(buffer.toByteArray());
         dis.write(buffer2.toByteArray());

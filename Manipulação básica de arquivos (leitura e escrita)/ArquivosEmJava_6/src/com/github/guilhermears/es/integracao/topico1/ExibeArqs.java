@@ -7,6 +7,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
 
 public class ExibeArqs {
+
     Scanner arq;
     String[] args;
 
@@ -22,8 +23,8 @@ public class ExibeArqs {
     }
 
     /**
-     * Método lê, linha a linha o arquivo e imprime a
-     * cada iteração até o fim do arquivo.
+     * Método lê, linha a linha o arquivo e imprime a cada iteração até o fim do
+     * arquivo.
      *
      * @throws java.io.UnsupportedEncodingException
      */
