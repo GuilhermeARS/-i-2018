@@ -1,7 +1,8 @@
-package main.java.com.github.guilhermears.es.integracao.topico3.tarefa3;
+package github.guilhermears.es.integracao.topico3.tarefa3;
 
 import javax.xml.bind.annotation.*;
 import java.util.List;
+
 
 /**
  * classe contem a lista de Estudantes e a definicão para o xml

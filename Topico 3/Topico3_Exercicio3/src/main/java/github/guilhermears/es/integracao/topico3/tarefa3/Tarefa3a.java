@@ -1,4 +1,4 @@
-package com.github.guilhermears.es.integracao.topico3.tarefa3;
+package github.guilhermears.es.integracao.topico3.tarefa3;
 
 import java.io.IOException;
 import java.util.ArrayList;
