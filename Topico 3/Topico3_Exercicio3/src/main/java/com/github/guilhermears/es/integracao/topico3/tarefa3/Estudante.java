@@ -1,12 +1,31 @@
-package com.github.guilhermears.es.integracao.topico3.tarefa1;
+package main.java.com.github.guilhermears.es.integracao.topico3.tarefa3;
 
 /**
- * classe representa um Aluno
+ * classe representa um Estudante
  */
-public class Aluno {
+public class Estudante {
 
     private String nome;
-    private String email;
+
+    private Endereco endereco;
+
+    public Estudante(String nome, Endereco endereco) {
+
+        this.nome = nome;
+        this.endereco = endereco;
+
+    }
+
+    public Estudante() {
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
 
     public String getNome() {
         return nome;
@@ -14,14 +33,6 @@ public class Aluno {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
 }

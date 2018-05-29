@@ -6,9 +6,9 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 
 
-public class persistir {
+public class Persistir {
 
-    public persistir(){
+    public Persistir(){
     }
     
  /**

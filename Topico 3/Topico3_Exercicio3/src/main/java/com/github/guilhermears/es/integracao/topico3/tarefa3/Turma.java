@@ -1,23 +1,30 @@
-package com.github.guilhermears.es.integracao.topico3.tarefa1;
+package main.java.com.github.guilhermears.es.integracao.topico3.tarefa3;
 
 import javax.xml.bind.annotation.*;
 import java.util.List;
 
 /**
- * classe contem a lista de alunos e a definição para o xml
+ * classe contem a lista de Estudantes e a definicão para o xml
  */
 @XmlRootElement()
-@XmlAccessorType(XmlAccessType.FIELD)
-public class Alunos {
+@XmlType(propOrder = {"estudantes"})
+public class Turma {
 
-    @XmlElement(name = "aluno")
-    private List<Aluno> alunos;
+    private List<Estudante> estudantes;
 
-    public List<Aluno> getAlunos() {
-        return alunos;
+    public Turma() {
     }
 
-    public void setAlunos(List<Aluno> alunos) {
-        this.alunos = alunos;
+    public Turma(List<Estudante> estudantes) {
+        this.estudantes = estudantes;
+    }
+
+    public List<Estudante> getEstudantes() {
+        return estudantes;
+    }
+
+    @XmlElement(name = "estudante")
+    public void setEstudantes(List<Estudante> estudantes) {
+        this.estudantes = estudantes;
     }
 }
